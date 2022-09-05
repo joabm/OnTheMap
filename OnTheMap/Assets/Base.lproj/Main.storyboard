@@ -57,6 +57,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="KoI-Ee-OLE">
+                                <rect key="frame" x="197" y="399" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -69,7 +72,9 @@
                             <constraint firstItem="qwp-tX-GgH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="KOh-nW-cO3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9GD-ev-CgM" secondAttribute="trailing" constant="40" id="KuS-8C-yRr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p4o-eZ-sbZ" secondAttribute="trailing" constant="40" id="Snx-BF-5U0"/>
+                            <constraint firstItem="KoI-Ee-OLE" firstAttribute="top" secondItem="STN-jn-YDP" secondAttribute="bottom" constant="8" symbolic="YES" id="WAS-B5-TrC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZJp-LO-QML" secondAttribute="trailing" constant="40" id="aiJ-yN-5Gj"/>
+                            <constraint firstItem="KoI-Ee-OLE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d7y-Og-HVV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qwp-tX-GgH" secondAttribute="trailing" constant="20" id="iAf-w4-eqz"/>
                             <constraint firstItem="qwp-tX-GgH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="px8-LD-PPj"/>
                             <constraint firstItem="9GD-ev-CgM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="qbL-aX-PA6"/>
@@ -78,9 +83,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="KoI-Ee-OLE" id="34I-fs-R62"/>
                         <outlet property="emailTextField" destination="ZJp-LO-QML" id="h5G-zC-knO"/>
+                        <outlet property="loginButton" destination="p4o-eZ-sbZ" id="JRa-Q1-OHi"/>
                         <outlet property="passwordTextField" destination="9GD-ev-CgM" id="EF0-7F-R6a"/>
                         <outlet property="signupTextView" destination="STN-jn-YDP" id="jNi-5e-DSy"/>
+                        <segue destination="HDw-DJ-Tbf" kind="presentation" identifier="completeLogin" id="0BH-7K-8bn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -111,7 +119,7 @@
                 <navigationController id="Ytm-62-KH9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" id="NTI-tk-LxS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="utX-iB-Gwb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -127,7 +135,7 @@
             <objects>
                 <tableViewController id="GKe-CR-CMB" customClass="ListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dmW-YG-ca8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -164,7 +172,7 @@
                 <navigationController id="BZl-6b-Zwe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" id="ALF-pw-ecl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lLc-Kc-Jzb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -180,7 +188,7 @@
             <objects>
                 <viewController id="N0F-w0-RbS" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wuF-am-5pI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="sjM-Co-VHB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -21,9 +21,3 @@ struct Session: Codable {
     let id: String
     let expiration: String
 }
-
-extension SessionResponse: LocalizedError {
-    var errorDescription: String? {
-        return statusMessage
-    }
-}
