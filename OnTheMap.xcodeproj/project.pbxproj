@@ -26,6 +26,9 @@
 		4875F96628C10CCF00354404 /* PostSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96528C10CCF00354404 /* PostSession.swift */; };
 		4875F96828C10CFF00354404 /* MapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96728C10CFF00354404 /* MapResponse.swift */; };
 		4875F96A28C10D1A00354404 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96928C10D1A00354404 /* SessionResponse.swift */; };
+		4875F96C28C1DF3A00354404 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96B28C1DF3A00354404 /* MapViewController.swift */; };
+		4875F96E28C1DF5C00354404 /* PinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96D28C1DF5C00354404 /* PinListViewController.swift */; };
+		4875F97028C1DF8F00354404 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96F28C1DF8F00354404 /* InputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		4875F96528C10CCF00354404 /* PostSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSession.swift; sourceTree = "<group>"; };
 		4875F96728C10CFF00354404 /* MapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapResponse.swift; sourceTree = "<group>"; };
 		4875F96928C10D1A00354404 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
+		4875F96B28C1DF3A00354404 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4875F96D28C1DF5C00354404 /* PinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinListViewController.swift; sourceTree = "<group>"; };
+		4875F96F28C1DF8F00354404 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				4875F93928C1036600354404 /* LoginViewController.swift */,
+				4875F96B28C1DF3A00354404 /* MapViewController.swift */,
+				4875F96D28C1DF5C00354404 /* PinListViewController.swift */,
+				4875F96F28C1DF8F00354404 /* InputViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,8 +264,11 @@
 				4875F93828C1036600354404 /* SceneDelegate.swift in Sources */,
 				4875F95328C105AE00354404 /* LoginTextField.swift in Sources */,
 				4875F96028C10C0300354404 /* LoginRequest.swift in Sources */,
+				4875F96E28C1DF5C00354404 /* PinListViewController.swift in Sources */,
+				4875F97028C1DF8F00354404 /* InputViewController.swift in Sources */,
 				4875F96628C10CCF00354404 /* PostSession.swift in Sources */,
 				4875F96428C10C4E00354404 /* DropPinRequest.swift in Sources */,
+				4875F96C28C1DF3A00354404 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
