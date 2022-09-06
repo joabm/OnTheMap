@@ -133,7 +133,7 @@
         <!--On The Map-->
         <scene sceneID="M3Q-2K-a5y">
             <objects>
-                <tableViewController id="GKe-CR-CMB" customClass="ListTableViewController" sceneMemberID="viewController">
+                <tableViewController id="GKe-CR-CMB" customClass="ListTableViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dmW-YG-ca8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,12 +154,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="On The Map" id="gYY-OZ-m3N">
-                        <barButtonItem key="leftBarButtonItem" image="icon_addpin" id="ae4-K2-pb8">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="WWY-Xx-QcH">
                             <connections>
-                                <segue destination="EeM-o4-IK9" kind="presentation" id="Laz-O8-SEk"/>
+                                <action selector="logoutTapped:" destination="eGb-yT-oNw" id="dzg-rv-Scu"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="icon_refresh" id="v7g-IX-G6F"/>
+                        <rightBarButtonItems>
+                            <barButtonItem image="icon_refresh" id="v7g-IX-G6F"/>
+                            <barButtonItem image="icon_addpin" id="ae4-K2-pb8">
+                                <connections>
+                                    <segue destination="EeM-o4-IK9" kind="presentation" id="Laz-O8-SEk"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGb-yT-oNw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -186,7 +193,7 @@
         <!--On The Map-->
         <scene sceneID="2q5-dz-DL1">
             <objects>
-                <viewController id="N0F-w0-RbS" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController id="N0F-w0-RbS" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wuF-am-5pI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,12 +201,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="WPh-tU-32r">
-                        <barButtonItem key="leftBarButtonItem" image="icon_addpin" id="UPw-py-fjk">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="hXT-jS-xYb">
                             <connections>
-                                <segue destination="EeM-o4-IK9" kind="presentation" id="2rH-rU-bWd"/>
+                                <action selector="logoutTapped:" destination="N0F-w0-RbS" id="VMy-3x-c3b"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="icon_refresh" id="kg6-9a-vpo"/>
+                        <rightBarButtonItems>
+                            <barButtonItem image="icon_refresh" id="kg6-9a-vpo"/>
+                            <barButtonItem image="icon_addpin" id="UPw-py-fjk">
+                                <connections>
+                                    <segue destination="EeM-o4-IK9" kind="presentation" id="2rH-rU-bWd"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yR4-I8-zL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -209,7 +223,7 @@
         <!--Input View Controller-->
         <scene sceneID="MGw-ac-Z4x">
             <objects>
-                <viewController id="EeM-o4-IK9" customClass="InputViewController" sceneMemberID="viewController">
+                <viewController id="EeM-o4-IK9" customClass="InputViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yxz-Ys-W31">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,7 +293,7 @@
         <!--Location View Controller-->
         <scene sceneID="GAH-Hc-Uvh">
             <objects>
-                <viewController id="zbV-xf-DFy" customClass="LocationViewController" sceneMemberID="viewController">
+                <viewController id="zbV-xf-DFy" customClass="LocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F5z-P1-f94">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -321,7 +335,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2rH-rU-bWd"/>
+        <segue reference="Laz-O8-SEk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_addpin" width="24" height="24"/>

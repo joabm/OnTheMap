@@ -127,5 +127,22 @@ class MapClient {
         }
     }
     
-    
+    class func logout(completion: @escaping () -> Void) {
+        var request = URLRequest(url: Endpoints.login.url) //same url as login
+        request.httpMethod = "DELETE"
+        var xsrfCookie: HTTPCookie? = nil
+        let sharedCookieStorage = HTTPCookieStorage.shared
+        for cookie in sharedCookieStorage.cookies! {
+          if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+        }
+        if let xsrfCookie = xsrfCookie {
+          request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            Auth.sessionKey = ""
+            DispatchQueue.main.async {
+                completion()
+            }        }
+        task.resume()
+    }
 }
