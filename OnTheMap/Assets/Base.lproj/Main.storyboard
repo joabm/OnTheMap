@@ -220,19 +220,19 @@
             </objects>
             <point key="canvasLocation" x="1909" y="-309"/>
         </scene>
-        <!--Input View Controller-->
+        <!--Input Location View Controller-->
         <scene sceneID="MGw-ac-Z4x">
             <objects>
-                <viewController id="EeM-o4-IK9" customClass="InputViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EeM-o4-IK9" customClass="InputLocationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yxz-Ys-W31">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="Pdb-za-5wV">
-                                <rect key="frame" x="20" y="69" width="374" height="67"/>
+                                <rect key="frame" x="20" y="86" width="374" height="67"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City, State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvK-zo-N6V">
-                                <rect key="frame" x="40" y="186" width="334" height="40"/>
+                                <rect key="frame" x="40" y="203" width="334" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gdp-ZI-m4c"/>
                                 </constraints>
@@ -240,7 +240,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Share a favorite site" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wCh-g9-dWQ">
-                                <rect key="frame" x="40" y="246" width="334" height="40"/>
+                                <rect key="frame" x="40" y="263" width="334" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eNh-mq-oKU"/>
                                 </constraints>
@@ -248,7 +248,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYj-xw-t9c">
-                                <rect key="frame" x="40" y="306" width="334" height="30"/>
+                                <rect key="frame" x="40" y="323" width="334" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="twN-sJ-IzJ"/>
                                 </constraints>
@@ -258,12 +258,11 @@
                                     <segue destination="zbV-xf-DFy" kind="presentation" id="8iL-3T-hvH"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DqE-0q-pBJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXd-JQ-WHp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
-                                    <navigationItem title="Add Location" id="79n-qI-usa">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="fTR-go-WSh"/>
+                                    <navigationItem title="Add Location" id="cK1-nk-FA6">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="o1p-Sx-ccF"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -274,10 +273,13 @@
                             <constraint firstItem="tYj-xw-t9c" firstAttribute="top" secondItem="wCh-g9-dWQ" secondAttribute="bottom" constant="20" id="1fg-MW-dJ6"/>
                             <constraint firstItem="fvK-zo-N6V" firstAttribute="leading" secondItem="V7U-93-4lA" secondAttribute="leading" constant="40" id="4s6-GO-zKZ"/>
                             <constraint firstItem="wCh-g9-dWQ" firstAttribute="top" secondItem="fvK-zo-N6V" secondAttribute="bottom" constant="20" id="8UQ-Ew-pak"/>
-                            <constraint firstItem="Pdb-za-5wV" firstAttribute="top" secondItem="V7U-93-4lA" secondAttribute="top" constant="25" id="C85-fi-aaI"/>
+                            <constraint firstItem="Pdb-za-5wV" firstAttribute="top" secondItem="hXd-JQ-WHp" secondAttribute="bottom" constant="30" id="C85-fi-aaI"/>
                             <constraint firstItem="Pdb-za-5wV" firstAttribute="leading" secondItem="V7U-93-4lA" secondAttribute="leading" constant="20" id="DWS-Ut-71T"/>
                             <constraint firstItem="V7U-93-4lA" firstAttribute="trailing" secondItem="Pdb-za-5wV" secondAttribute="trailing" constant="20" id="ESW-bS-dY3"/>
+                            <constraint firstAttribute="trailing" secondItem="hXd-JQ-WHp" secondAttribute="trailing" id="Lzo-Yn-X9F"/>
                             <constraint firstItem="V7U-93-4lA" firstAttribute="trailing" secondItem="tYj-xw-t9c" secondAttribute="trailing" constant="40" id="Pes-gn-lgh"/>
+                            <constraint firstItem="hXd-JQ-WHp" firstAttribute="leading" secondItem="yxz-Ys-W31" secondAttribute="leading" id="SuE-8Y-fb5"/>
+                            <constraint firstItem="hXd-JQ-WHp" firstAttribute="top" secondItem="yxz-Ys-W31" secondAttribute="top" id="a9T-jK-eit"/>
                             <constraint firstItem="V7U-93-4lA" firstAttribute="trailing" secondItem="fvK-zo-N6V" secondAttribute="trailing" constant="40" id="h64-sf-3L3"/>
                             <constraint firstItem="V7U-93-4lA" firstAttribute="trailing" secondItem="wCh-g9-dWQ" secondAttribute="trailing" constant="40" id="j6K-YO-wuG"/>
                             <constraint firstItem="fvK-zo-N6V" firstAttribute="top" secondItem="Pdb-za-5wV" secondAttribute="bottom" constant="50" id="lTO-6t-YHe"/>
@@ -290,10 +292,10 @@
             </objects>
             <point key="canvasLocation" x="2818.840579710145" y="-26.116071428571427"/>
         </scene>
-        <!--Location View Controller-->
+        <!--Add Location View Controller-->
         <scene sceneID="GAH-Hc-Uvh">
             <objects>
-                <viewController id="zbV-xf-DFy" customClass="LocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zbV-xf-DFy" customClass="AddLocationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F5z-P1-f94">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,11 +305,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Add Location" id="aWa-v0-hRv">
-                                        <barButtonItem key="leftBarButtonItem" image="icon_back-arrow" id="lrE-SA-hko">
-                                            <connections>
-                                                <segue destination="EeM-o4-IK9" kind="presentation" id="nPH-Ng-h79"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" image="icon_back-arrow" id="lrE-SA-hko"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
