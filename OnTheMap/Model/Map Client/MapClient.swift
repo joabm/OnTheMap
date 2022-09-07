@@ -22,11 +22,13 @@ class MapClient {
         static let base = "https://onthemap-api.udacity.com/v1"
         
         case login
+        case getStudentLocations
         
         
         var stringValue: String {
             switch self {
             case .login: return Endpoints.base + "/session"
+            case .getStudentLocations: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
             }
         }
         
@@ -37,7 +39,7 @@ class MapClient {
     
     }
     
-    class func taskForGETRequest<ResponseType: Decodable>(url: URL, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
+    @discardableResult class func taskForGETRequest<ResponseType: Decodable>(url: URL, discardFive: Bool, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
@@ -47,8 +49,12 @@ class MapClient {
                 return
             }
             
-            let range = 5..<data.count
-            let newData = data.subdata(in: range)
+            var newData = data
+            if discardFive {
+                let range = 5..<data.count
+                newData = data.subdata(in: range)
+            }
+            
             let decoder = JSONDecoder()
             
             do {
@@ -74,7 +80,7 @@ class MapClient {
         return task
     }
     
-    @discardableResult class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, response: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
+    @discardableResult class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, discardFive: Bool, response: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -89,8 +95,12 @@ class MapClient {
                 
                 return
             }
-            let range = 5..<data.count
-            let newData = data.subdata(in: range)
+            var newData = data
+            if discardFive {
+                let range = 5..<data.count
+                newData = newData.subdata(in: range)
+            }
+            
             let decoder = JSONDecoder()
             
             do {
@@ -117,7 +127,7 @@ class MapClient {
     
     class func login(username: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         let body = LoginRequest(udacity: ["username": "\(username)", "password": "\(password)"])
-        taskForPOSTRequest(url: Endpoints.login.url, response: LoginResponse.self, body: body) {
+        taskForPOSTRequest(url: Endpoints.login.url, discardFive: true, response: LoginResponse.self, body: body) {
             (response, error) in
             if let response = response {
                 Auth.uniqueKey = response.account.key
@@ -146,4 +156,16 @@ class MapClient {
             }        }
         task.resume()
     }
+    
+    class func getStudentLocations(completion: @escaping ([StudentData], Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.getStudentLocations.url, discardFive: false, response: StudentLocationResponse.self) { (response, error) in
+            if let response = response {
+                completion(response.studentResults, nil)
+            } else {
+                completion([], error)
+            }
+        }
+        
+    }
+    
 }

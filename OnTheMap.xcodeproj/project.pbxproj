@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		483E253D28C87200008736AF /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E253C28C87200008736AF /* StudentLocationResponse.swift */; };
 		486A43CA28C5B9E0000FC01D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486A43C928C5B9E0000FC01D /* ErrorResponse.swift */; };
 		486A43CC28C6CFF6000FC01D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486A43CB28C6CFF6000FC01D /* UIViewController+Extension.swift */; };
 		486A43D028C6E6A6000FC01D /* InputLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486A43CF28C6E6A6000FC01D /* InputLocationViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		483E253C28C87200008736AF /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
 		486A43C928C5B9E0000FC01D /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		486A43CB28C6CFF6000FC01D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		486A43CF28C6E6A6000FC01D /* InputLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLocationViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				4875F96928C10D1A00354404 /* LoginResponse.swift */,
 				486A43C928C5B9E0000FC01D /* ErrorResponse.swift */,
 				48C8D61328C7C32900E86B46 /* StudentData.swift */,
+				483E253C28C87200008736AF /* StudentLocationResponse.swift */,
 			);
 			path = "Map Responses";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				4875F93A28C1036600354404 /* LoginViewController.swift in Sources */,
 				4875F95128C1059700354404 /* GradientView.swift in Sources */,
 				48C8D61228C7AA6000E86B46 /* StudentListViewController.swift in Sources */,
+				483E253D28C87200008736AF /* StudentLocationResponse.swift in Sources */,
 				486A43D228C6E727000FC01D /* AddLocationViewController.swift in Sources */,
 				4875F95C28C10BBA00354404 /* MapClient.swift in Sources */,
 				4875F96828C10CFF00354404 /* MapResponse.swift in Sources */,
