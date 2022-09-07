@@ -88,7 +88,7 @@
                         <outlet property="loginButton" destination="p4o-eZ-sbZ" id="JRa-Q1-OHi"/>
                         <outlet property="passwordTextField" destination="9GD-ev-CgM" id="EF0-7F-R6a"/>
                         <outlet property="signupTextView" destination="STN-jn-YDP" id="jNi-5e-DSy"/>
-                        <segue destination="HDw-DJ-Tbf" kind="presentation" identifier="completeLogin" id="0BH-7K-8bn"/>
+                        <segue destination="HDw-DJ-Tbf" kind="presentation" identifier="completeLogin" modalPresentationStyle="fullScreen" id="0BH-7K-8bn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -119,7 +119,7 @@
                 <navigationController id="Ytm-62-KH9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" id="NTI-tk-LxS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="utX-iB-Gwb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -133,19 +133,43 @@
         <!--On The Map-->
         <scene sceneID="M3Q-2K-a5y">
             <objects>
-                <tableViewController id="GKe-CR-CMB" customClass="ListTableViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="GKe-CR-CMB" customClass="StudentListViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dmW-YG-ca8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iyY-S9-hC6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentInfoCell" textLabel="iPs-KU-3Bz" detailTextLabel="Gd3-ib-ryz" imageView="7cP-5u-D61" style="IBUITableViewCellStyleSubtitle" id="iyY-S9-hC6" customClass="StudentTableViewCell" customModule="OnTheMap" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iyY-S9-hC6" id="kgF-10-h5c">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iyY-S9-hC6" id="kgF-10-h5c">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="StudentName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iPs-KU-3Bz">
+                                            <rect key="frame" x="79" y="6" width="77.5" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="StudentURL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gd3-ib-ryz">
+                                            <rect key="frame" x="79" y="22.5" width="63.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="logo-u" id="7cP-5u-D61">
+                                            <rect key="frame" x="20" y="0.0" width="44" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="studentName" destination="iPs-KU-3Bz" id="PZD-gQ-Fsc"/>
+                                    <outlet property="studentURL" destination="Gd3-ib-ryz" id="IEb-ze-WEW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -160,10 +184,14 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="icon_refresh" id="v7g-IX-G6F"/>
+                            <barButtonItem image="icon_refresh" id="v7g-IX-G6F">
+                                <connections>
+                                    <action selector="refreshButton:" destination="GKe-CR-CMB" id="Ghf-ao-x57"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="icon_addpin" id="ae4-K2-pb8">
                                 <connections>
-                                    <segue destination="EeM-o4-IK9" kind="presentation" id="Laz-O8-SEk"/>
+                                    <segue destination="M0R-T9-CdQ" kind="presentation" identifier="addLocation" id="L3f-s5-Exn"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -179,7 +207,7 @@
                 <navigationController id="BZl-6b-Zwe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" id="ALF-pw-ecl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lLc-Kc-Jzb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -195,7 +223,7 @@
             <objects>
                 <viewController id="N0F-w0-RbS" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wuF-am-5pI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="sjM-Co-VHB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -207,10 +235,14 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="icon_refresh" id="kg6-9a-vpo"/>
+                            <barButtonItem image="icon_refresh" id="kg6-9a-vpo">
+                                <connections>
+                                    <action selector="refreshButton:" destination="N0F-w0-RbS" id="6vq-7S-HKB"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="icon_addpin" id="UPw-py-fjk">
                                 <connections>
-                                    <segue destination="EeM-o4-IK9" kind="presentation" id="2rH-rU-bWd"/>
+                                    <segue destination="M0R-T9-CdQ" kind="presentation" identifier="addLocation" id="5xa-hA-O0d"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -220,10 +252,26 @@
             </objects>
             <point key="canvasLocation" x="1909" y="-309"/>
         </scene>
-        <!--Input Location View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="XcS-En-9XU">
+            <objects>
+                <navigationController id="M0R-T9-CdQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7aK-Tl-jRE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EeM-o4-IK9" kind="relationship" relationship="rootViewController" id="sPc-WO-Pmp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hlf-Pi-PfZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2717" y="-26"/>
+        </scene>
+        <!--Add Location-->
         <scene sceneID="MGw-ac-Z4x">
             <objects>
-                <viewController id="EeM-o4-IK9" customClass="InputLocationViewController" sceneMemberID="viewController">
+                <viewController id="EeM-o4-IK9" customClass="InputLocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yxz-Ys-W31">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,17 +303,9 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Find Location"/>
                                 <connections>
-                                    <segue destination="zbV-xf-DFy" kind="presentation" id="8iL-3T-hvH"/>
+                                    <segue destination="zbV-xf-DFy" kind="presentation" identifier="finishLocation" id="8iL-3T-hvH"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXd-JQ-WHp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                                <items>
-                                    <navigationItem title="Add Location" id="cK1-nk-FA6">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="o1p-Sx-ccF"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="V7U-93-4lA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -273,42 +313,37 @@
                             <constraint firstItem="tYj-xw-t9c" firstAttribute="top" secondItem="wCh-g9-dWQ" secondAttribute="bottom" constant="20" id="1fg-MW-dJ6"/>
                             <constraint firstItem="fvK-zo-N6V" firstAttribute="leading" secondItem="V7U-93-4lA" secondAttribute="leading" constant="40" id="4s6-GO-zKZ"/>
                             <constraint firstItem="wCh-g9-dWQ" firstAttribute="top" secondItem="fvK-zo-N6V" secondAttribute="bottom" constant="20" id="8UQ-Ew-pak"/>
-                            <constraint firstItem="Pdb-za-5wV" firstAttribute="top" secondItem="hXd-JQ-WHp" secondAttribute="bottom" constant="30" id="C85-fi-aaI"/>
                             <constraint firstItem="Pdb-za-5wV" firstAttribute="leading" secondItem="V7U-93-4lA" secondAttribute="leading" constant="20" id="DWS-Ut-71T"/>
                             <constraint firstItem="V7U-93-4lA" firstAttribute="trailing" secondItem="Pdb-za-5wV" secondAttribute="trailing" constant="20" id="ESW-bS-dY3"/>
-                            <constraint firstAttribute="trailing" secondItem="hXd-JQ-WHp" secondAttribute="trailing" id="Lzo-Yn-X9F"/>
                             <constraint firstItem="V7U-93-4lA" firstAttribute="trailing" secondItem="tYj-xw-t9c" secondAttribute="trailing" constant="40" id="Pes-gn-lgh"/>
-                            <constraint firstItem="hXd-JQ-WHp" firstAttribute="leading" secondItem="yxz-Ys-W31" secondAttribute="leading" id="SuE-8Y-fb5"/>
-                            <constraint firstItem="hXd-JQ-WHp" firstAttribute="top" secondItem="yxz-Ys-W31" secondAttribute="top" id="a9T-jK-eit"/>
                             <constraint firstItem="V7U-93-4lA" firstAttribute="trailing" secondItem="fvK-zo-N6V" secondAttribute="trailing" constant="40" id="h64-sf-3L3"/>
                             <constraint firstItem="V7U-93-4lA" firstAttribute="trailing" secondItem="wCh-g9-dWQ" secondAttribute="trailing" constant="40" id="j6K-YO-wuG"/>
                             <constraint firstItem="fvK-zo-N6V" firstAttribute="top" secondItem="Pdb-za-5wV" secondAttribute="bottom" constant="50" id="lTO-6t-YHe"/>
                             <constraint firstItem="wCh-g9-dWQ" firstAttribute="leading" secondItem="V7U-93-4lA" secondAttribute="leading" constant="40" id="qaC-JC-QGe"/>
                             <constraint firstItem="tYj-xw-t9c" firstAttribute="leading" secondItem="V7U-93-4lA" secondAttribute="leading" constant="40" id="qpu-SA-3Q6"/>
+                            <constraint firstItem="Pdb-za-5wV" firstAttribute="top" secondItem="V7U-93-4lA" secondAttribute="top" constant="30" id="uKe-c0-qaw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="hay-Up-WH5">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="9Xb-ah-JnP">
+                            <connections>
+                                <action selector="cancelAddLocation:" destination="EeM-o4-IK9" id="A8V-b0-efW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joY-mp-F7L" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2818.840579710145" y="-26.116071428571427"/>
+            <point key="canvasLocation" x="3432" y="-26"/>
         </scene>
         <!--Add Location View Controller-->
         <scene sceneID="GAH-Hc-Uvh">
             <objects>
-                <viewController id="zbV-xf-DFy" customClass="AddLocationViewController" sceneMemberID="viewController">
+                <viewController id="zbV-xf-DFy" customClass="AddLocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F5z-P1-f94">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="369-6Z-fu5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Add Location" id="aWa-v0-hRv">
-                                        <barButtonItem key="leftBarButtonItem" image="icon_back-arrow" id="lrE-SA-hko"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6Q-46-WjM">
                                 <rect key="frame" x="40" y="732" width="334" height="30"/>
                                 <constraints>
@@ -317,23 +352,38 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Finish"/>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0O-9r-0Mv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Add Location" id="36O-EL-Ytn">
+                                        <barButtonItem key="leftBarButtonItem" title="backButton" image="icon_back-arrow" id="rRg-j6-ZRa">
+                                            <connections>
+                                                <action selector="backButton:" destination="zbV-xf-DFy" id="D0Q-t4-Qva"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fER-fH-hTy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fER-fH-hTy" firstAttribute="bottom" secondItem="J6Q-46-WjM" secondAttribute="bottom" constant="80" id="4M5-Wp-Okq"/>
                             <constraint firstItem="fER-fH-hTy" firstAttribute="trailing" secondItem="J6Q-46-WjM" secondAttribute="trailing" constant="40" id="Rwj-ue-rqp"/>
+                            <constraint firstItem="K0O-9r-0Mv" firstAttribute="trailing" secondItem="fER-fH-hTy" secondAttribute="trailing" id="bq7-K8-xH5"/>
+                            <constraint firstItem="K0O-9r-0Mv" firstAttribute="top" secondItem="F5z-P1-f94" secondAttribute="top" id="iAX-25-Pao"/>
                             <constraint firstItem="J6Q-46-WjM" firstAttribute="leading" secondItem="fER-fH-hTy" secondAttribute="leading" constant="40" id="vOz-Oe-PVD"/>
+                            <constraint firstItem="K0O-9r-0Mv" firstAttribute="leading" secondItem="fER-fH-hTy" secondAttribute="leading" id="w6r-PS-t9h"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Jx-q3-qLj" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3528" y="-21"/>
+            <point key="canvasLocation" x="4140.579710144928" y="-26.116071428571427"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Laz-O8-SEk"/>
+        <segue reference="L3f-s5-Exn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_addpin" width="24" height="24"/>

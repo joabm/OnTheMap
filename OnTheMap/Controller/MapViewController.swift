@@ -10,6 +10,9 @@ import UIKit
 
 class MapViewController: UIViewController {
     
+    @IBAction func refreshButton(_ sender: Any) {
+        
+    }
     
     
 }

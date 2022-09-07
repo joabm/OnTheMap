@@ -9,6 +9,6 @@ import Foundation
 
 class StudentDataModel {
     
-    static var studentLocationData = [Students]()
+    static var studentList = [StudentData]()
     
 }

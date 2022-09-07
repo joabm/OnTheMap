@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Students: Codable {
+struct StudentData: Codable {
     
     let createdAt: String
     let firstName: String
