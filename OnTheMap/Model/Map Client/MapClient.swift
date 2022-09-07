@@ -13,7 +13,8 @@ class MapClient {
     
     struct Auth {
         
-        static var sessionKey = ""
+        //static var sessionKey = ""
+        static var uniqueKey = ""
     
     }
     
@@ -36,7 +37,7 @@ class MapClient {
     
     }
     
-    @discardableResult class func taskForGETRequest<ResponseType: Decodable>(url: URL, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
+    class func taskForGETRequest<ResponseType: Decodable>(url: URL, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
@@ -119,7 +120,7 @@ class MapClient {
         taskForPOSTRequest(url: Endpoints.login.url, response: LoginResponse.self, body: body) {
             (response, error) in
             if let response = response {
-                Auth.sessionKey = response.account.key
+                Auth.uniqueKey = response.account.key
                 completion(response.account.registered, nil)
             } else {
                 completion(false, error)
@@ -139,7 +140,7 @@ class MapClient {
           request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
         }
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            Auth.sessionKey = ""
+            Auth.uniqueKey = ""
             DispatchQueue.main.async {
                 completion()
             }        }

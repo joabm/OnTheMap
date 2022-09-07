@@ -21,7 +21,7 @@
 		4875F94F28C1058600354404 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F94E28C1058600354404 /* LoginButton.swift */; };
 		4875F95128C1059700354404 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95028C1059700354404 /* GradientView.swift */; };
 		4875F95328C105AE00354404 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95228C105AE00354404 /* LoginTextField.swift */; };
-		4875F95A28C10B6C00354404 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95928C10B6C00354404 /* MapModel.swift */; };
+		4875F95A28C10B6C00354404 /* StudentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95928C10B6C00354404 /* StudentDataModel.swift */; };
 		4875F95C28C10BBA00354404 /* MapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95B28C10BBA00354404 /* MapClient.swift */; };
 		4875F96028C10C0300354404 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95F28C10C0300354404 /* LoginRequest.swift */; };
 		4875F96428C10C4E00354404 /* DropPinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96328C10C4E00354404 /* DropPinRequest.swift */; };
@@ -29,7 +29,8 @@
 		4875F96828C10CFF00354404 /* MapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96728C10CFF00354404 /* MapResponse.swift */; };
 		4875F96A28C10D1A00354404 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96928C10D1A00354404 /* LoginResponse.swift */; };
 		4875F96C28C1DF3A00354404 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96B28C1DF3A00354404 /* MapViewController.swift */; };
-		4875F96E28C1DF5C00354404 /* PinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96D28C1DF5C00354404 /* PinListViewController.swift */; };
+		48C8D61228C7AA6000E86B46 /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8D61128C7AA6000E86B46 /* StudentListViewController.swift */; };
+		48C8D61428C7C32900E86B46 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8D61328C7C32900E86B46 /* Students.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +50,7 @@
 		4875F94E28C1058600354404 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		4875F95028C1059700354404 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		4875F95228C105AE00354404 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
-		4875F95928C10B6C00354404 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		4875F95928C10B6C00354404 /* StudentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDataModel.swift; sourceTree = "<group>"; };
 		4875F95B28C10BBA00354404 /* MapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClient.swift; sourceTree = "<group>"; };
 		4875F95F28C10C0300354404 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		4875F96328C10C4E00354404 /* DropPinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropPinRequest.swift; sourceTree = "<group>"; };
@@ -57,7 +58,8 @@
 		4875F96728C10CFF00354404 /* MapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapResponse.swift; sourceTree = "<group>"; };
 		4875F96928C10D1A00354404 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		4875F96B28C1DF3A00354404 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		4875F96D28C1DF5C00354404 /* PinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinListViewController.swift; sourceTree = "<group>"; };
+		48C8D61128C7AA6000E86B46 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
+		48C8D61328C7C32900E86B46 /* Students.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +118,7 @@
 			children = (
 				4875F93928C1036600354404 /* LoginViewController.swift */,
 				4875F96B28C1DF3A00354404 /* MapViewController.swift */,
-				4875F96D28C1DF5C00354404 /* PinListViewController.swift */,
+				48C8D61128C7AA6000E86B46 /* StudentListViewController.swift */,
 				486A43CF28C6E6A6000FC01D /* InputLocationViewController.swift */,
 				486A43D128C6E727000FC01D /* AddLocationViewController.swift */,
 				486A43CB28C6CFF6000FC01D /* UIViewController+Extension.swift */,
@@ -149,7 +151,7 @@
 		4875F95528C106AE00354404 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4875F95928C10B6C00354404 /* MapModel.swift */,
+				4875F95928C10B6C00354404 /* StudentDataModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -178,6 +180,7 @@
 				4875F96728C10CFF00354404 /* MapResponse.swift */,
 				4875F96928C10D1A00354404 /* LoginResponse.swift */,
 				486A43C928C5B9E0000FC01D /* ErrorResponse.swift */,
+				48C8D61328C7C32900E86B46 /* Students.swift */,
 			);
 			path = "Map Responses";
 			sourceTree = "<group>";
@@ -253,13 +256,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4875F95A28C10B6C00354404 /* MapModel.swift in Sources */,
+				4875F95A28C10B6C00354404 /* StudentDataModel.swift in Sources */,
 				486A43D028C6E6A6000FC01D /* InputLocationViewController.swift in Sources */,
 				4875F94F28C1058600354404 /* LoginButton.swift in Sources */,
+				48C8D61428C7C32900E86B46 /* Students.swift in Sources */,
 				486A43CA28C5B9E0000FC01D /* ErrorResponse.swift in Sources */,
 				4875F96A28C10D1A00354404 /* LoginResponse.swift in Sources */,
 				4875F93A28C1036600354404 /* LoginViewController.swift in Sources */,
 				4875F95128C1059700354404 /* GradientView.swift in Sources */,
+				48C8D61228C7AA6000E86B46 /* StudentListViewController.swift in Sources */,
 				486A43D228C6E727000FC01D /* AddLocationViewController.swift in Sources */,
 				4875F95C28C10BBA00354404 /* MapClient.swift in Sources */,
 				4875F96828C10CFF00354404 /* MapResponse.swift in Sources */,
@@ -269,7 +274,6 @@
 				4875F93828C1036600354404 /* SceneDelegate.swift in Sources */,
 				4875F95328C105AE00354404 /* LoginTextField.swift in Sources */,
 				4875F96028C10C0300354404 /* LoginRequest.swift in Sources */,
-				4875F96E28C1DF5C00354404 /* PinListViewController.swift in Sources */,
 				4875F96628C10CCF00354404 /* PostSession.swift in Sources */,
 				4875F96428C10C4E00354404 /* DropPinRequest.swift in Sources */,
 				4875F96C28C1DF3A00354404 /* MapViewController.swift in Sources */,

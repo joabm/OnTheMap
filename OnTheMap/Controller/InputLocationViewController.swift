@@ -11,4 +11,9 @@ import UIKit
 class InputLocationViewController: UIViewController {
     
     
+    @IBAction func cancelAddLocation(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
