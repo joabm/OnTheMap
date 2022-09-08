@@ -5,7 +5,6 @@
 //  Created by Joab Maldonado on 9/6/22.
 //
 
-import Foundation
 import UIKit
 
 class StudentTableViewCell: UITableViewCell {
@@ -48,7 +47,7 @@ class StudentListViewController: UITableViewController {
     
     func showFailure(message: String) {
         let alertVC = UIAlertController(title: "Hi!", message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
     
