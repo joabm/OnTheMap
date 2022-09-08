@@ -16,14 +16,40 @@ class StudentTableViewCell: UITableViewCell {
 
 class StudentListViewController: UITableViewController {
 
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getStudentLocationList()
         
     }
     
     @IBAction func refreshButton(_ sender: Any) {
-        
+        refreshButton.isEnabled = false
+        getStudentLocationList()
+    }
+    
+    
+    func getStudentLocationList () {
+        MapClient.getStudentLocations(completion: handleStudentLocationListResponse(locations:error:))
+    }
+    
+    func handleStudentLocationListResponse(locations: [StudentData], error: Error?) {
+        refreshButton.isEnabled = true
+        if error == nil {
+            StudentDataModel.studentList = locations
+            tableView.reloadData()
+        } else {
+            print(error as Any)
+            showFailure(message: error?.localizedDescription ?? "")
+        }
+    }
+    
+    func showFailure(message: String) {
+        let alertVC = UIAlertController(title: "Hi!", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertVC, animated: true, completion: nil)
     }
     
     // MARK: TableView
@@ -33,17 +59,25 @@ class StudentListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "studentInfoCell") as! StudentTableViewCell
-        cell.studentName?.text = StudentDataModel.studentList[indexPath.row].firstName + " " + StudentDataModel.studentList[indexPath.row].lastName
-        cell.studentURL?.text = StudentDataModel.studentList[indexPath.row].mediaURL
+        let cell = tableView.dequeueReusableCell(withIdentifier: "studentInfoCell", for: indexPath) as! StudentTableViewCell
+        let student = StudentDataModel.studentList[indexPath.row]
+        cell.studentName.text = student.firstName! + " " + student.lastName!
+        cell.studentURL.text = student.mediaURL!
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = StudentDataModel.studentList[indexPath.row]
-        let url = selectedCell.mediaURL
-        
-        UIApplication.shared.open(URL(string: url)!, completionHandler: nil)
+        let studentName = StudentDataModel.studentList[indexPath.row].firstName!
+        if selectedCell.mediaURL!.isEmpty {
+            let message = studentName + " did not share a URL"
+            showFailure(message: message)
+        } else {
+            let url = selectedCell.mediaURL!
+            UIApplication.shared.open(URL(string: url)!, completionHandler: nil)
+        }
     }
     
+    
 }
+

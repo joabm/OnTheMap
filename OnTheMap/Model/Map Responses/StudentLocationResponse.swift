@@ -9,6 +9,6 @@ import Foundation
 
 struct StudentLocationResponse: Codable {
     
-    var studentResults: [StudentData]
+    let results: [StudentData]
     
 }

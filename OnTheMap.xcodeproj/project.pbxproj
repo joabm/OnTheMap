@@ -154,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				4875F95928C10B6C00354404 /* StudentDataModel.swift */,
+				48C8D61328C7C32900E86B46 /* StudentData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -182,7 +183,6 @@
 				4875F96728C10CFF00354404 /* MapResponse.swift */,
 				4875F96928C10D1A00354404 /* LoginResponse.swift */,
 				486A43C928C5B9E0000FC01D /* ErrorResponse.swift */,
-				48C8D61328C7C32900E86B46 /* StudentData.swift */,
 				483E253C28C87200008736AF /* StudentLocationResponse.swift */,
 			);
 			path = "Map Responses";

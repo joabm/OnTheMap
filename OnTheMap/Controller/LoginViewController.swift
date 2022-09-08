@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
     func handleLoginRespone(success: Bool, error: Error?) {
         if success {
             setLoggingIn(false)
-            debugPrint("Login Successful")
+            debugPrint(MapClient.Auth.uniqueKey)
             self.performSegue(withIdentifier: "completeLogin", sender: nil)
         } else {
             showLoginFailure(message: error?.localizedDescription ?? "")
