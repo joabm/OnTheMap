@@ -14,6 +14,10 @@ class StudentTableViewCell: UITableViewCell {
 }
 
 class StudentListViewController: UITableViewController {
+    
+    var studentLocations: [StudentData] { return
+        StudentDataModel.studentList
+    }
 
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
@@ -29,7 +33,6 @@ class StudentListViewController: UITableViewController {
         getStudentLocationList()
     }
     
-    
     func getStudentLocationList () {
         MapClient.getStudentLocations(completion: handleStudentLocationListResponse(locations:error:))
     }
@@ -38,6 +41,7 @@ class StudentListViewController: UITableViewController {
         refreshButton.isEnabled = true
         if error == nil {
             StudentDataModel.studentList = locations
+            print(locations)
             tableView.reloadData()
         } else {
             print(error as Any)
@@ -54,25 +58,25 @@ class StudentListViewController: UITableViewController {
     // MARK: TableView
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return StudentDataModel.studentList.count
+        return studentLocations.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentInfoCell", for: indexPath) as! StudentTableViewCell
-        let student = StudentDataModel.studentList[indexPath.row]
-        cell.studentName.text = student.firstName! + " " + student.lastName!
-        cell.studentURL.text = student.mediaURL!
+        let student = studentLocations[indexPath.row]
+        cell.studentName.text = student.firstName + " " + student.lastName
+        cell.studentURL.text = student.mediaURL
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCell = StudentDataModel.studentList[indexPath.row]
-        let studentName = StudentDataModel.studentList[indexPath.row].firstName!
-        if selectedCell.mediaURL!.isEmpty {
+        let selectedCell = studentLocations[indexPath.row]
+        let studentName = selectedCell.firstName
+        if selectedCell.mediaURL.isEmpty {
             let message = studentName + " did not share a URL"
             showFailure(message: message)
         } else {
-            let url = selectedCell.mediaURL!
+            let url = selectedCell.mediaURL
             UIApplication.shared.open(URL(string: url)!, completionHandler: nil)
         }
     }
