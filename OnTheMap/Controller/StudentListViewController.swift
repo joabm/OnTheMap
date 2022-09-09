@@ -14,10 +14,6 @@ class StudentTableViewCell: UITableViewCell {
 }
 
 class StudentListViewController: UITableViewController {
-    
-    var studentLocations: [StudentData] { return
-        StudentDataModel.studentList
-    }
 
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
@@ -25,7 +21,6 @@ class StudentListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getStudentLocationList()
-        
     }
     
     @IBAction func refreshButton(_ sender: Any) {
@@ -41,7 +36,6 @@ class StudentListViewController: UITableViewController {
         refreshButton.isEnabled = true
         if error == nil {
             StudentDataModel.studentList = locations
-            print(locations)
             tableView.reloadData()
         } else {
             print(error as Any)
@@ -58,19 +52,19 @@ class StudentListViewController: UITableViewController {
     // MARK: TableView
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return studentLocations.count
+        return StudentDataModel.studentList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentInfoCell", for: indexPath) as! StudentTableViewCell
-        let student = studentLocations[indexPath.row]
+        let student = StudentDataModel.studentList[indexPath.row]
         cell.studentName.text = student.firstName + " " + student.lastName
         cell.studentURL.text = student.mediaURL
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCell = studentLocations[indexPath.row]
+        let selectedCell = StudentDataModel.studentList[indexPath.row]
         let studentName = selectedCell.firstName
         if selectedCell.mediaURL.isEmpty {
             let message = studentName + " did not share a URL"
