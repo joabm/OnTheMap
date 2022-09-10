@@ -62,19 +62,29 @@ class StudentListViewController: UITableViewController {
         cell.studentURL.text = student.mediaURL
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = StudentDataModel.studentList[indexPath.row]
         let studentName = selectedCell.firstName
-        if selectedCell.mediaURL.isEmpty {
-            let message = studentName + " did not share a URL"
-            showFailure(message: message)
-        } else {
-            let url = selectedCell.mediaURL
+        let url = selectedCell.mediaURL
+        if url.isValidURL {
             UIApplication.shared.open(URL(string: url)!, completionHandler: nil)
+        } else {
+            let message = studentName + " did not share a valid URL"
+            showFailure(message: message)
         }
     }
     
-    
 }
 
+extension String {
+    var isValidURL: Bool {
+        let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+        if let match = detector.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) {
+            // it is a link, if the match covers the whole string
+            return match.range.length == self.utf16.count
+        } else {
+            return false
+        }
+    }
+}
