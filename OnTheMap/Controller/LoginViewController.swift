@@ -47,7 +47,6 @@ class LoginViewController: UIViewController {
         } else {
             showLoginFailure(message: error?.localizedDescription ?? "")
         }
-        
     }
     
     func setLoggingIn(_ loggingIn: Bool) {
