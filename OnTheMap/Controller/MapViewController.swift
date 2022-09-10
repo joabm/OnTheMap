@@ -53,6 +53,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
         self.mapView.addAnnotations(annotations)
     }
+    
     // MARK: - MKMapViewDelegate
 
     // Here we create a view with a "right callout accessory view". You might choose to look into other
@@ -82,8 +83,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
             let app = UIApplication.shared
-            if let toOpen = view.annotation?.subtitle! {
-                app.open(URL(string: toOpen)!)
+            let toOpen = view.annotation?.subtitle! ?? "noURL"
+            let url = URL(string: toOpen)
+            if let url = url {
+                app.open(url)
+            } else {
+                showFailure(message: "A valid URL was not provided")
             }
         }
     }
