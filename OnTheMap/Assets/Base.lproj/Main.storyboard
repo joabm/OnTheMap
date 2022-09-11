@@ -303,10 +303,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="Pdb-za-5wV">
-                                <rect key="frame" x="20" y="86" width="374" height="67"/>
+                                <rect key="frame" x="20" y="81" width="374" height="67"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City, State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvK-zo-N6V">
-                                <rect key="frame" x="40" y="203" width="334" height="45"/>
+                                <rect key="frame" x="40" y="198" width="334" height="45"/>
                                 <color key="backgroundColor" red="0.98439258337020874" green="0.97635465860366821" blue="0.95340269804000854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="gdp-ZI-m4c"/>
@@ -315,7 +315,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Share a favorite site" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wCh-g9-dWQ">
-                                <rect key="frame" x="40" y="268" width="334" height="45"/>
+                                <rect key="frame" x="40" y="263" width="334" height="45"/>
                                 <color key="backgroundColor" red="0.98439258337020874" green="0.97635465860366821" blue="0.95340269804000854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eNh-mq-oKU"/>
@@ -324,7 +324,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYj-xw-t9c">
-                                <rect key="frame" x="40" y="333" width="334" height="45"/>
+                                <rect key="frame" x="40" y="328" width="334" height="45"/>
                                 <color key="backgroundColor" red="0.74992089449999999" green="0.87206714460000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="twN-sJ-IzJ"/>
@@ -338,7 +338,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="38Z-0m-7em">
-                                <rect key="frame" x="197" y="386" width="20" height="20"/>
+                                <rect key="frame" x="197" y="381" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="V7U-93-4lA"/>
@@ -357,7 +357,7 @@
                             <constraint firstItem="fvK-zo-N6V" firstAttribute="top" secondItem="Pdb-za-5wV" secondAttribute="bottom" constant="50" id="lTO-6t-YHe"/>
                             <constraint firstItem="wCh-g9-dWQ" firstAttribute="leading" secondItem="V7U-93-4lA" secondAttribute="leading" constant="40" id="qaC-JC-QGe"/>
                             <constraint firstItem="tYj-xw-t9c" firstAttribute="leading" secondItem="V7U-93-4lA" secondAttribute="leading" constant="40" id="qpu-SA-3Q6"/>
-                            <constraint firstItem="Pdb-za-5wV" firstAttribute="top" secondItem="V7U-93-4lA" secondAttribute="top" constant="30" id="uKe-c0-qaw"/>
+                            <constraint firstItem="Pdb-za-5wV" firstAttribute="top" secondItem="V7U-93-4lA" secondAttribute="top" constant="25" id="uKe-c0-qaw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="hay-Up-WH5">
