@@ -12,9 +12,8 @@ import MapKit
 class MapClient {
     
     struct Auth {
-        
-        //static var sessionKey = ""
-        static var uniqueKey = ""
+
+        static var uniqueKey = "" //users session key
     
     }
     
@@ -23,20 +22,20 @@ class MapClient {
         
         case login
         case getStudentLocations
+        case getUsersPublicData
         
         
         var stringValue: String {
             switch self {
             case .login: return Endpoints.base + "/session"
             case .getStudentLocations: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
+            case .getUsersPublicData: return Endpoints.base + "/users/" + Auth.uniqueKey
             }
         }
         
         var url: URL {
             return URL(string: stringValue)!
-    }
-    
-    
+        }
     }
     
     @discardableResult class func taskForGETRequest<ResponseType: Decodable>(url: URL, discardFive: Bool, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
@@ -165,6 +164,16 @@ class MapClient {
             }
         }
         
+    }
+    
+    class func getUsersPublicData(completion: @ escaping (String?, String?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.getUsersPublicData.url, discardFive: true, response: UsersPublicDataResponse.self) { response, error in
+            if let response = response {
+                completion(response.firstName, response.lastName, nil)
+            } else {
+                completion(nil, nil, error)
+            }
+        }
     }
     
 }
