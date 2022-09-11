@@ -23,6 +23,7 @@ class MapClient {
         case login
         case getStudentLocations
         case getUsersPublicData
+        case postUserLocation
         
         
         var stringValue: String {
@@ -30,6 +31,7 @@ class MapClient {
             case .login: return Endpoints.base + "/session"
             case .getStudentLocations: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
             case .getUsersPublicData: return Endpoints.base + "/users/" + Auth.uniqueKey
+            case .postUserLocation: return Endpoints.base + "/StudentLocation"
             }
         }
         
@@ -176,4 +178,10 @@ class MapClient {
         }
     }
     
+    class func postUsersLocation(firstName: String, lastName: String, latitude: Float, longitude: Float, mediaURL: String, mapString: String, completion: @escaping (Bool, Error?) -> Void) {
+        let body = PostUsersLocation(uniqueKey: MapClient.Auth.uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
+        taskForPOSTRequest(url: Endpoints.postUserLocation.url, discardFive: false, response: UsersPostResponse.self, body: body) { (_, error) in
+            completion(error == nil, error)
+        }
+    }
 }
