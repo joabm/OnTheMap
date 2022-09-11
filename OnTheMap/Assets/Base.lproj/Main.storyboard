@@ -331,10 +331,10 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Find Location"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Find Location on Map"/>
                                 <connections>
                                     <action selector="findLocationTapped:" destination="EeM-o4-IK9" eventType="touchUpInside" id="TWf-gq-e3p"/>
-                                    <segue destination="zbV-xf-DFy" kind="presentation" identifier="finishLocation" id="8iL-3T-hvH"/>
+                                    <segue destination="zbV-xf-DFy" kind="presentation" identifier="findOnMap" id="8iL-3T-hvH"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="38Z-0m-7em">
@@ -441,7 +441,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5xa-hA-O0d"/>
+        <segue reference="L3f-s5-Exn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_addpin" width="24" height="24"/>

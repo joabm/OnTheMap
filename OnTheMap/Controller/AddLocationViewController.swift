@@ -10,6 +10,11 @@ import UIKit
 
 class AddLocationViewController: UIViewController {
     
+    // MARK: Properites
+    
+    var locationText = ""
+    var urlText = ""
+    
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -19,6 +24,8 @@ class AddLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(locationText)
+        print(urlText)
     }
     
 }

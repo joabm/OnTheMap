@@ -42,12 +42,18 @@ class InputLocationViewController: UIViewController, UITextFieldDelegate {
     // MARK: Actions
     
     @IBAction func findLocationTapped(_ sender: Any) {
-        setIndicator(true)
         if (locationTextField.text == "" || urlTextField.text == "") {
-            setIndicator(false)
-            showFailure(message: "Please enter a location and a URL to share")
+            showFailure(title: "Something is missing", message: "Please enter a location and a URL to share")
         }
-        setIndicator(false)
+        setIndicator(true)
+        performSegue(withIdentifier: "findOnMap", sender: self)
+    }
+    
+    //Pass values of text fields to the AddLocationView
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! AddLocationViewController
+        controller.locationText = locationTextField.text ?? ""
+        controller.urlText = urlTextField.text ?? ""
     }
     
     @IBAction func cancelAddLocation(_ sender: Any) {
@@ -101,8 +107,8 @@ class InputLocationViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func showFailure(message: String) {
-        let alertVC = UIAlertController(title: "Hi!", message: message, preferredStyle: .alert)
+    func showFailure(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
