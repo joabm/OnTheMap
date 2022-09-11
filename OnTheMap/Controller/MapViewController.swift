@@ -114,7 +114,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
 
     func showFailure(message: String) {
-        let alertVC = UIAlertController(title: "Hi!", message: message, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Student info error", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
