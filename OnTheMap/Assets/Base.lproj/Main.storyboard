@@ -418,11 +418,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Fva-V3-ix2">
+                                <rect key="frame" x="188.5" y="106" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fER-fH-hTy"/>
                         <color key="backgroundColor" red="0.93512031120000005" green="0.97257767959999997" blue="0.94596893800000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="fER-fH-hTy" firstAttribute="bottom" secondItem="J6Q-46-WjM" secondAttribute="bottom" constant="80" id="4M5-Wp-Okq"/>
+                            <constraint firstItem="Fva-V3-ix2" firstAttribute="top" secondItem="K0O-9r-0Mv" secondAttribute="bottom" constant="50" id="AqA-cw-eyS"/>
+                            <constraint firstItem="Fva-V3-ix2" firstAttribute="centerX" secondItem="F5z-P1-f94" secondAttribute="centerX" id="Fss-Ar-83V"/>
                             <constraint firstItem="vmz-Rt-Ddl" firstAttribute="bottom" secondItem="fER-fH-hTy" secondAttribute="bottom" id="Nab-oO-gBZ"/>
                             <constraint firstItem="vmz-Rt-Ddl" firstAttribute="leading" secondItem="fER-fH-hTy" secondAttribute="leading" id="Q43-Jy-3b5"/>
                             <constraint firstItem="vmz-Rt-Ddl" firstAttribute="trailing" secondItem="fER-fH-hTy" secondAttribute="trailing" id="Rvx-vU-mLV"/>
@@ -435,6 +440,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Fva-V3-ix2" id="e4o-II-7Db"/>
                         <outlet property="mapView" destination="vmz-Rt-Ddl" id="YuF-bb-2bP"/>
                     </connections>
                 </viewController>

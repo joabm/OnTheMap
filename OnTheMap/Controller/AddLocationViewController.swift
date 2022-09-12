@@ -18,11 +18,14 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
     
     
     @IBOutlet weak var mapView: MKMapView!
-    
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
     @IBAction func finishButton(_ sender: Any) {
+        setIndicator(true)
         MapClient.getUsersPublicData(completion: handlePublicData(firstName:lastName:error:))
     }
     
@@ -30,6 +33,7 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setIndicator(true)
         getCoordinates(addressString: locationText, completion: handleGeoLocationResponse(location:error:))
     }
     
@@ -56,8 +60,10 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
     //handles error if the input location is invalid
     func handleGeoLocationResponse(location: CLLocationCoordinate2D, error: NSError?) {
         if error == nil {
+            setIndicator(false)
             mapAnnotation()
         } else {
+            setIndicator(false)
             self.showFailure(message: "The location may not exist.  Be sure to enter the City, State/Country format (example: New York, NY or London, England).")
         }
     }
@@ -110,15 +116,31 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
         if error == nil {
             print(firstName!)
             print(lastName!)
+            setIndicator(false)
             MapClient.postUsersLocation(firstName: firstName!, lastName: lastName!, latitude: Float(self.geoLocation.latitude), longitude: Float(geoLocation.longitude), mediaURL: self.urlText, mapString: self.locationText, completion: handlePostUsersResponse(success:error:))
+        } else {
+            setIndicator(false)
+            showFailure(message: "The users public data could not be retrieved.  Try again")
         }
     }
     
     func handlePostUsersResponse(success: Bool, error: Error?) {
         if success {
+            setIndicator(false)
             dismiss(animated: true, completion: nil)
         } else {
+            setIndicator(false)
             showFailure(message: "It's not possible to save your location at this time")
+        }
+    }
+    
+    // MARK: setup and failure
+    
+    func setIndicator(_ isFinding: Bool) {
+        if isFinding {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
         }
     }
     
