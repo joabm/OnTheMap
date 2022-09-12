@@ -116,9 +116,7 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
     
     func handlePostUsersResponse(success: Bool, error: Error?) {
         if success {
-            let controller: MapViewController
-            controller = storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-            self.navigationController?.pushViewController(controller, animated: true)
+            dismiss(animated: true, completion: nil)
         } else {
             showFailure(message: "It's not possible to save your location at this time")
         }
