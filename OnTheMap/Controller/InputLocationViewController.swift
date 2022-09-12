@@ -45,9 +45,7 @@ class InputLocationViewController: UIViewController, UITextFieldDelegate {
         if (locationTextField.text == "" || urlTextField.text == "") {
             showFailure(title: "Something is missing", message: "Please enter a location and a URL to share")
         }
-        setIndicator(true)
         performSegue(withIdentifier: "findOnMap", sender: self)
-        setIndicator(false)
     }
     
     //Pass values of text fields to the AddLocationView
@@ -99,14 +97,6 @@ class InputLocationViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: setup and failure
-    
-    func setIndicator(_ isFinding: Bool) {
-        if isFinding {
-            activityIndicator.startAnimating()
-        } else {
-            activityIndicator.stopAnimating()
-        }
-    }
     
     func showFailure(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
