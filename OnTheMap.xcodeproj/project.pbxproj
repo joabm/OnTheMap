@@ -18,10 +18,6 @@
 		4875F93D28C1036600354404 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4875F93B28C1036600354404 /* Main.storyboard */; };
 		4875F93F28C1036800354404 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4875F93E28C1036800354404 /* Assets.xcassets */; };
 		4875F94228C1036800354404 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4875F94028C1036800354404 /* LaunchScreen.storyboard */; };
-		4875F94D28C1057400354404 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F94C28C1057400354404 /* Colors.swift */; };
-		4875F94F28C1058600354404 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F94E28C1058600354404 /* LoginButton.swift */; };
-		4875F95128C1059700354404 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95028C1059700354404 /* GradientView.swift */; };
-		4875F95328C105AE00354404 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95228C105AE00354404 /* InputTextField.swift */; };
 		4875F95A28C10B6C00354404 /* StudentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95928C10B6C00354404 /* StudentDataModel.swift */; };
 		4875F95C28C10BBA00354404 /* MapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95B28C10BBA00354404 /* MapClient.swift */; };
 		4875F96028C10C0300354404 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95F28C10C0300354404 /* LoginRequest.swift */; };
@@ -48,10 +44,6 @@
 		4875F93E28C1036800354404 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4875F94128C1036800354404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4875F94328C1036800354404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4875F94C28C1057400354404 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		4875F94E28C1058600354404 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
-		4875F95028C1059700354404 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		4875F95228C105AE00354404 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		4875F95928C10B6C00354404 /* StudentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDataModel.swift; sourceTree = "<group>"; };
 		4875F95B28C10BBA00354404 /* MapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClient.swift; sourceTree = "<group>"; };
 		4875F95F28C10C0300354404 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -98,7 +90,6 @@
 				4875F93728C1036600354404 /* SceneDelegate.swift */,
 				4875F94328C1036800354404 /* Info.plist */,
 				4875F95428C1068100354404 /* Model */,
-				4875F94B28C1054700354404 /* View */,
 				4875F94A28C104EE00354404 /* Controller */,
 				4875F94928C1044F00354404 /* Assets */,
 			);
@@ -126,17 +117,6 @@
 				486A43CB28C6CFF6000FC01D /* UIViewController+Extension.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		4875F94B28C1054700354404 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4875F94C28C1057400354404 /* Colors.swift */,
-				4875F94E28C1058600354404 /* LoginButton.swift */,
-				4875F95028C1059700354404 /* GradientView.swift */,
-				4875F95228C105AE00354404 /* InputTextField.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		4875F95428C1068100354404 /* Model */ = {
@@ -262,22 +242,18 @@
 				48CDFF3A28CE6F17000BD551 /* UsersPostResponse.swift in Sources */,
 				4875F95A28C10B6C00354404 /* StudentDataModel.swift in Sources */,
 				486A43D028C6E6A6000FC01D /* InputLocationViewController.swift in Sources */,
-				4875F94F28C1058600354404 /* LoginButton.swift in Sources */,
 				48C8D61428C7C32900E86B46 /* StudentData.swift in Sources */,
 				486A43CA28C5B9E0000FC01D /* ErrorResponse.swift in Sources */,
 				4875F96A28C10D1A00354404 /* LoginResponse.swift in Sources */,
 				4875F93A28C1036600354404 /* LoginViewController.swift in Sources */,
-				4875F95128C1059700354404 /* GradientView.swift in Sources */,
 				48C8D61228C7AA6000E86B46 /* StudentListViewController.swift in Sources */,
 				483E253D28C87200008736AF /* StudentLocationResponse.swift in Sources */,
 				486A43D228C6E727000FC01D /* AddLocationViewController.swift in Sources */,
 				4875F95C28C10BBA00354404 /* MapClient.swift in Sources */,
 				48CDFF3828CE69D1000BD551 /* UsersPublicDataResponse.swift in Sources */,
 				486A43CC28C6CFF6000FC01D /* UIViewController+Extension.swift in Sources */,
-				4875F94D28C1057400354404 /* Colors.swift in Sources */,
 				4875F93628C1036600354404 /* AppDelegate.swift in Sources */,
 				4875F93828C1036600354404 /* SceneDelegate.swift in Sources */,
-				4875F95328C105AE00354404 /* InputTextField.swift in Sources */,
 				4875F96028C10C0300354404 /* LoginRequest.swift in Sources */,
 				4875F96428C10C4E00354404 /* PostUsersLocation.swift in Sources */,
 				4875F96C28C1DF3A00354404 /* MapViewController.swift in Sources */,
