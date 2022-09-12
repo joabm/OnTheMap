@@ -47,6 +47,7 @@ class InputLocationViewController: UIViewController, UITextFieldDelegate {
         }
         setIndicator(true)
         performSegue(withIdentifier: "findOnMap", sender: self)
+        setIndicator(false)
     }
     
     //Pass values of text fields to the AddLocationView
