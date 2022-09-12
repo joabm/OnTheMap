@@ -49,13 +49,11 @@ class MapClient {
                 }
                 return
             }
-            //print(String(data: data, encoding: .utf8)!)
             var newData = data
             if discardFive {
                 let range = 5..<data.count
                 newData = newData.subdata(in: range)
             }
-            //print(String(data: newData, encoding: .utf8)!)
             let decoder = JSONDecoder()
             
             do {

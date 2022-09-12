@@ -21,7 +21,7 @@
 		4875F94D28C1057400354404 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F94C28C1057400354404 /* Colors.swift */; };
 		4875F94F28C1058600354404 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F94E28C1058600354404 /* LoginButton.swift */; };
 		4875F95128C1059700354404 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95028C1059700354404 /* GradientView.swift */; };
-		4875F95328C105AE00354404 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95228C105AE00354404 /* LoginTextField.swift */; };
+		4875F95328C105AE00354404 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95228C105AE00354404 /* InputTextField.swift */; };
 		4875F95A28C10B6C00354404 /* StudentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95928C10B6C00354404 /* StudentDataModel.swift */; };
 		4875F95C28C10BBA00354404 /* MapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95B28C10BBA00354404 /* MapClient.swift */; };
 		4875F96028C10C0300354404 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95F28C10C0300354404 /* LoginRequest.swift */; };
@@ -51,7 +51,7 @@
 		4875F94C28C1057400354404 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4875F94E28C1058600354404 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		4875F95028C1059700354404 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		4875F95228C105AE00354404 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		4875F95228C105AE00354404 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		4875F95928C10B6C00354404 /* StudentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDataModel.swift; sourceTree = "<group>"; };
 		4875F95B28C10BBA00354404 /* MapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClient.swift; sourceTree = "<group>"; };
 		4875F95F28C10C0300354404 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				4875F94C28C1057400354404 /* Colors.swift */,
 				4875F94E28C1058600354404 /* LoginButton.swift */,
 				4875F95028C1059700354404 /* GradientView.swift */,
-				4875F95228C105AE00354404 /* LoginTextField.swift */,
+				4875F95228C105AE00354404 /* InputTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 				4875F94D28C1057400354404 /* Colors.swift in Sources */,
 				4875F93628C1036600354404 /* AppDelegate.swift in Sources */,
 				4875F93828C1036600354404 /* SceneDelegate.swift in Sources */,
-				4875F95328C105AE00354404 /* LoginTextField.swift in Sources */,
+				4875F95328C105AE00354404 /* InputTextField.swift in Sources */,
 				4875F96028C10C0300354404 /* LoginRequest.swift in Sources */,
 				4875F96428C10C4E00354404 /* PostUsersLocation.swift in Sources */,
 				4875F96C28C1DF3A00354404 /* MapViewController.swift in Sources */,

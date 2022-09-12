@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginTextField: UITextField {
+class InputTextField: UITextField {
     
     override func awakeFromNib() {
         super.awakeFromNib()

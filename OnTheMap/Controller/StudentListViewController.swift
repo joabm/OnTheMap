@@ -7,6 +7,7 @@
 
 import UIKit
 
+//class for TableViewCell
 class StudentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var studentName: UILabel!
@@ -28,6 +29,7 @@ class StudentListViewController: UITableViewController {
         getStudentLocationList()
     }
     
+    // MARK: Get location Data
     func getStudentLocationList () {
         MapClient.getStudentLocations(completion: handleStudentLocationListResponse(locations:error:))
     }
@@ -38,7 +40,7 @@ class StudentListViewController: UITableViewController {
             StudentDataModel.studentList = locations
             tableView.reloadData()
         } else {
-            print(error as Any)
+            //print(error as Any)
             showFailure(message: error?.localizedDescription ?? "")
         }
     }
@@ -77,6 +79,7 @@ class StudentListViewController: UITableViewController {
     
 }
 
+//extension for validing URL input
 extension String {
     var isValidURL: Bool {
         let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)

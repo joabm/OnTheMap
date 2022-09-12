@@ -24,6 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         getStudentLocations()
     }
     
+    //applies pins to the map
     func mapAnnotations(_ locations: [StudentData]) {
 
         var annotations = [MKPointAnnotation]()
@@ -108,11 +109,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             //StudentDataModel.studentList = locations
             mapAnnotations(locations)
         } else {
-            print(error as Any)
+            //print(error as Any)
             showFailure(message: error?.localizedDescription ?? "")
         }
     }
-
+    
+    // MARK: Failure messaging
+    
     func showFailure(message: String) {
         let alertVC = UIAlertController(title: "Student info error", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))

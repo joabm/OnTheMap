@@ -46,8 +46,6 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
                 if let placemarks = placemarks?[0] {
                     if let location = (placemarks.location) {
                         self.geoLocation = location.coordinate
-                        print("Latitude = \(self.geoLocation.latitude)")
-                        print("Longitude = \(self.geoLocation.longitude)")
                         completion(location.coordinate, nil)
                     }
                 }
@@ -114,8 +112,8 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
     
     func handlePublicData(firstName: String?, lastName: String?, error: Error?) {
         if error == nil {
-            print(firstName!)
-            print(lastName!)
+            debugPrint(firstName!) //prints name to console to know which anonamized pin was set
+            debugPrint(lastName!)
             setIndicator(false)
             MapClient.postUsersLocation(firstName: firstName!, lastName: lastName!, latitude: Float(self.geoLocation.latitude), longitude: Float(geoLocation.longitude), mediaURL: self.urlText, mapString: self.locationText, completion: handlePostUsersResponse(success:error:))
         } else {

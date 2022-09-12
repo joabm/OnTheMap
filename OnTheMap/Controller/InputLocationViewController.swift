@@ -48,7 +48,7 @@ class InputLocationViewController: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "findOnMap", sender: self)
     }
     
-    //Pass values of text fields to the AddLocationView
+    //Pass values of text fields to the AddLocationView.  Note activity indicator for geolocation activity is on the addlocationview.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! AddLocationViewController
         controller.locationText = locationTextField.text ?? ""
@@ -96,7 +96,7 @@ class InputLocationViewController: UIViewController, UITextFieldDelegate {
         return keyboardSize.cgRectValue.height
     }
     
-    // MARK: setup and failure
+    // MARK: Failures
     
     func showFailure(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)

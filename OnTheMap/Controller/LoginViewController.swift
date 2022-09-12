@@ -26,6 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        //creating an attributed string for signing up
         let signUpString = NSMutableAttributedString(string: "Don't have an account?  Sign Up")
         let url = URL(string: "https://auth.udacity.com/sign-up?next=https://classroom.udacity.com")!
         signUpString.setAttributes([.link: url], range: NSMakeRange(24, 7))
