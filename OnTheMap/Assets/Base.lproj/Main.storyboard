@@ -194,7 +194,7 @@
                                     <action selector="refreshButton:" destination="GKe-CR-CMB" id="Ghf-ao-x57"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="icon_addpin" id="ae4-K2-pb8">
+                            <barButtonItem image="icon_pin" id="ae4-K2-pb8">
                                 <connections>
                                     <segue destination="M0R-T9-CdQ" kind="presentation" identifier="addLocation" id="L3f-s5-Exn"/>
                                 </connections>
@@ -229,7 +229,7 @@
         <!--On The Map-->
         <scene sceneID="2q5-dz-DL1">
             <objects>
-                <viewController id="N0F-w0-RbS" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="N0F-w0-RbS" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wuF-am-5pI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,7 +262,7 @@
                                     <action selector="refreshButton:" destination="N0F-w0-RbS" id="6vq-7S-HKB"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="icon_addpin" id="UPw-py-fjk">
+                            <barButtonItem image="icon_pin" id="UPw-py-fjk">
                                 <connections>
                                     <segue destination="M0R-T9-CdQ" kind="presentation" identifier="addLocation" id="5xa-hA-O0d"/>
                                 </connections>
@@ -400,7 +400,10 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Finish"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Submit"/>
+                                <connections>
+                                    <action selector="finishButton:" destination="zbV-xf-DFy" eventType="touchUpInside" id="yAC-9g-Wk3"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0O-9r-0Mv">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -444,10 +447,10 @@
         <segue reference="L3f-s5-Exn"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="icon_addpin" width="24" height="24"/>
         <image name="icon_back-arrow" width="24" height="24"/>
         <image name="icon_listview-deselected" width="75" height="50"/>
         <image name="icon_mapview-deselected" width="75" height="50"/>
+        <image name="icon_pin" width="24" height="24"/>
         <image name="icon_refresh" width="24" height="24"/>
         <image name="icon_world" width="52" height="67"/>
         <image name="logo-u" width="62" height="62"/>

@@ -22,13 +22,14 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func finishButton(_ sender: Any) {
+        MapClient.getUsersPublicData(completion: handlePublicData(firstName:lastName:error:))
+    }
     
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(locationText)
-        print(urlText)
         getCoordinates(addressString: locationText, completion: handleGeoLocationResponse(location:error:))
     }
     
@@ -103,6 +104,24 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
         }
         
         return pinView
+    }
+    
+    func handlePublicData(firstName: String?, lastName: String?, error: Error?) {
+        if error == nil {
+            print(firstName!)
+            print(lastName!)
+            MapClient.postUsersLocation(firstName: firstName!, lastName: lastName!, latitude: Float(self.geoLocation.latitude), longitude: Float(geoLocation.longitude), mediaURL: self.urlText, mapString: self.locationText, completion: handlePostUsersResponse(success:error:))
+        }
+    }
+    
+    func handlePostUsersResponse(success: Bool, error: Error?) {
+        if success {
+            let controller: MapViewController
+            controller = storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+            self.navigationController?.pushViewController(controller, animated: true)
+        } else {
+            showFailure(message: "It's not possible to save your location at this time")
+        }
     }
     
     func showFailure(message: String) {

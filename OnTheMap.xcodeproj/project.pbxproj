@@ -26,7 +26,6 @@
 		4875F95C28C10BBA00354404 /* MapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95B28C10BBA00354404 /* MapClient.swift */; };
 		4875F96028C10C0300354404 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F95F28C10C0300354404 /* LoginRequest.swift */; };
 		4875F96428C10C4E00354404 /* PostUsersLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96328C10C4E00354404 /* PostUsersLocation.swift */; };
-		4875F96828C10CFF00354404 /* MapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96728C10CFF00354404 /* MapResponse.swift */; };
 		4875F96A28C10D1A00354404 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96928C10D1A00354404 /* LoginResponse.swift */; };
 		4875F96C28C1DF3A00354404 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875F96B28C1DF3A00354404 /* MapViewController.swift */; };
 		48C8D61228C7AA6000E86B46 /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C8D61128C7AA6000E86B46 /* StudentListViewController.swift */; };
@@ -57,7 +56,6 @@
 		4875F95B28C10BBA00354404 /* MapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClient.swift; sourceTree = "<group>"; };
 		4875F95F28C10C0300354404 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		4875F96328C10C4E00354404 /* PostUsersLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUsersLocation.swift; sourceTree = "<group>"; };
-		4875F96728C10CFF00354404 /* MapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapResponse.swift; sourceTree = "<group>"; };
 		4875F96928C10D1A00354404 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		4875F96B28C1DF3A00354404 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		48C8D61128C7AA6000E86B46 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 		4875F95828C106F600354404 /* Map Responses */ = {
 			isa = PBXGroup;
 			children = (
-				4875F96728C10CFF00354404 /* MapResponse.swift */,
 				4875F96928C10D1A00354404 /* LoginResponse.swift */,
 				486A43C928C5B9E0000FC01D /* ErrorResponse.swift */,
 				483E253C28C87200008736AF /* StudentLocationResponse.swift */,
@@ -276,7 +273,6 @@
 				486A43D228C6E727000FC01D /* AddLocationViewController.swift in Sources */,
 				4875F95C28C10BBA00354404 /* MapClient.swift in Sources */,
 				48CDFF3828CE69D1000BD551 /* UsersPublicDataResponse.swift in Sources */,
-				4875F96828C10CFF00354404 /* MapResponse.swift in Sources */,
 				486A43CC28C6CFF6000FC01D /* UIViewController+Extension.swift in Sources */,
 				4875F94D28C1057400354404 /* Colors.swift in Sources */,
 				4875F93628C1036600354404 /* AppDelegate.swift in Sources */,
