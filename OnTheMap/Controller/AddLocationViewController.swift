@@ -57,7 +57,7 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
         if error == nil {
             mapAnnotation()
         } else {
-            self.showFailure(message: "The location may not exist.  Be sure to enter the City, State format (example: New York, NY).")
+            self.showFailure(message: "The location may not exist.  Be sure to enter the City, State/Country format (example: New York, NY or London, England).")
         }
     }
         
@@ -74,9 +74,17 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
         annotation.subtitle = self.urlText
 
         mapView.addAnnotation(annotation)
+        centerMapOnLocation(CLLocation(latitude: latitude, longitude: longitude), mapView: mapView)
         mapView.selectAnnotation(annotation, animated: true)
         
     }
+    
+    func centerMapOnLocation(_ location: CLLocation, mapView: MKMapView) {
+            let regionRadius: CLLocationDistance = 5000
+            let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                      latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
+            mapView.setRegion(coordinateRegion, animated: true)
+        }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
