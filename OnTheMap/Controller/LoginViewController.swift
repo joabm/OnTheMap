@@ -77,7 +77,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //keeps the keyboard from covering the input field by removing the height of the keyboard from the views frame.
     @objc func keyboardWillShow(_ notification:Notification) {
         if emailTextField.isEditing && UIDevice.current.orientation.isLandscape || passwordTextField.isEditing && UIDevice.current.orientation.isLandscape {
-            view.frame.origin.y = -100 //getKeyboardHeight(notification)
+            view.frame.origin.y = -100 //reduce verticle frame
         }
     }
     

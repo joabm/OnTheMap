@@ -74,7 +74,7 @@ class InputLocationViewController: UIViewController, UITextFieldDelegate {
     //keeps the keyboard from covering the input field by removing the height of the keyboard from the views frame.
     @objc func keyboardWillShow(_ notification:Notification) {
         if urlTextField.isEditing && UIDevice.current.orientation.isLandscape || locationTextField.isEditing && UIDevice.current.orientation.isLandscape {
-            view.frame.origin.y = -125 //getKeyboardHeight(notification)
+            view.frame.origin.y = -125 //reduce vertical frame
         }
     }
     

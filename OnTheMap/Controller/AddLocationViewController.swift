@@ -62,7 +62,7 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
             mapAnnotation()
         } else {
             setIndicator(false)
-            self.showFailure(message: "The location may not exist.  Be sure to enter the City, State/Country format (example: New York, NY or London, England).")
+            showFailure(message: "The location may not exist.  Be sure to enter the City, State/Country format (example: New York, NY or London, England).")
         }
     }
         
@@ -75,8 +75,8 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        annotation.title = self.locationText
-        annotation.subtitle = self.urlText
+        annotation.title = locationText
+        annotation.subtitle = urlText
 
         mapView.addAnnotation(annotation)
         centerMapOnLocation(CLLocation(latitude: latitude, longitude: longitude), mapView: mapView)
@@ -115,7 +115,7 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate {
             debugPrint(firstName!) //prints name to console to know which anonamized pin was set
             debugPrint(lastName!)
             setIndicator(false)
-            MapClient.postUsersLocation(firstName: firstName!, lastName: lastName!, latitude: Float(self.geoLocation.latitude), longitude: Float(geoLocation.longitude), mediaURL: self.urlText, mapString: self.locationText, completion: handlePostUsersResponse(success:error:))
+            MapClient.postUsersLocation(firstName: firstName!, lastName: lastName!, latitude: Float(geoLocation.latitude), longitude: Float(geoLocation.longitude), mediaURL: urlText, mapString: locationText, completion: handlePostUsersResponse(success:error:))
         } else {
             setIndicator(false)
             showFailure(message: "The users public data could not be retrieved.  Try again")
