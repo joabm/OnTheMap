@@ -26,7 +26,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     //applies pins to the map
     func mapAnnotations(_ locations: [StudentData]) {
-
+        
+        //clears annotations from the map
+        mapView.removeAnnotations(mapView.annotations)
+        
         var annotations = [MKPointAnnotation]()
 
         for dictionary in locations {
@@ -51,8 +54,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             // Finally we place the annotation in an array of annotations.
             annotations.append(annotation)
         }
-
-        self.mapView.addAnnotations(annotations)
+        //adds annotations to the map
+        mapView.addAnnotations(annotations)
     }
     
     // MARK: - MKMapViewDelegate
@@ -103,10 +106,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func handleStudentLocationListResponse(locations: [StudentData], error: Error?) {
         refreshButton.isEnabled = true
         if error == nil {
-//            if mapView.annotations.count > 0 {
-//                mapView.removeAnnotation(mapView.annotations as! MKAnnotation)
-//            }
-            //StudentDataModel.studentList = locations
             mapAnnotations(locations)
         } else {
             //print(error as Any)
