@@ -185,7 +185,7 @@
                     <navigationItem key="navigationItem" title="On The Map" id="gYY-OZ-m3N">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="WWY-Xx-QcH">
                             <connections>
-                                <action selector="logoutTapped:" destination="eGb-yT-oNw" id="dzg-rv-Scu"/>
+                                <action selector="logoutTapped:" destination="GKe-CR-CMB" id="sRx-Ad-3z9"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
@@ -253,7 +253,7 @@
                     <navigationItem key="navigationItem" title="On The Map" id="WPh-tU-32r">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="hXT-jS-xYb">
                             <connections>
-                                <action selector="logoutTapped:" destination="N0F-w0-RbS" id="VMy-3x-c3b"/>
+                                <action selector="logoutTapped:" destination="N0F-w0-RbS" id="EJV-yc-Bt6"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
@@ -450,7 +450,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5xa-hA-O0d"/>
+        <segue reference="L3f-s5-Exn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_back-arrow" width="24" height="24"/>
